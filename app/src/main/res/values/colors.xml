@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="purple_pastel">#E1BEE7</color>
-    <color name="orange_pastel">#FFE0B2</color>
-    <color name="background_soft">#FBF9FF</color>
-    <color name="black">#FF000000</color>
+    <color name="m3_primary">#6750A4</color>
+    <color name="m3_primary_container">#EADDFF</color>
+    <color name="m3_secondary_container">#FFD8E4</color> <color name="m3_surface">#FEF7FF</color>
+    <color name="m3_on_surface">#1D1B20</color>
+    <color name="m3_outline">#79747E</color>
 </resources>

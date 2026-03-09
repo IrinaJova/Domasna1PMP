@@ -21,14 +21,13 @@ class MainActivity : AppCompatActivity() {
         btnSave.setOnClickListener {
             val tagText = etTag.text.toString()
             if (tagText.isNotEmpty()) {
-                // ПОВИКУВАЊЕ НА ФУНКЦИЈАТА ЗА ДОДАВАЊЕ ТАГ
+                // Додавање на нов ред со модерен дизајн
                 addNewTagRow(container, tagText)
 
-                // Чистење на полињата по зачувување
                 etTag.text?.clear()
                 etSearch.text?.clear()
             } else {
-                Toast.makeText(this, "Внесете име на таг!", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "Please enter a tag!", Toast.LENGTH_SHORT).show()
             }
         }
 
@@ -37,26 +36,28 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    private fun addNewTagRow(container: LinearLayout, name: String) {
+    private fun addNewTagRow(container: LinearLayout, tagName: String) {
         val row = LinearLayout(this).apply {
             orientation = LinearLayout.HORIZONTAL
             val lp = LinearLayout.LayoutParams(
                 LinearLayout.LayoutParams.MATCH_PARENT,
                 LinearLayout.LayoutParams.WRAP_CONTENT
             )
-            lp.setMargins(0, 0, 0, 10)
+            lp.setMargins(0, 0, 0, 12)
             layoutParams = lp
         }
 
+        // Tonal Button изглед (заоблен како пилула)
         val tagBtn = MaterialButton(this).apply {
             layoutParams = LinearLayout.LayoutParams(0, LinearLayout.LayoutParams.WRAP_CONTENT, 1f)
-            text = name
-            setBackgroundColor(resources.getColor(R.color.purple_pastel, null))
-            setTextColor(resources.getColor(R.color.black, null))
-            cornerRadius = 20
+            text = tagName
+            setBackgroundColor(resources.getColor(R.color.m3_primary_container, null))
+            setTextColor(resources.getColor(R.color.m3_primary, null))
+            cornerRadius = 28 // Material 3 "Pill" форма
             isAllCaps = false
         }
 
+        // Outlined Button изглед
         val editBtn = MaterialButton(this, null, com.google.android.material.R.attr.materialButtonOutlinedStyle).apply {
             layoutParams = LinearLayout.LayoutParams(
                 LinearLayout.LayoutParams.WRAP_CONTENT,
